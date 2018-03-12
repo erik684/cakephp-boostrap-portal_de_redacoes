@@ -14,7 +14,11 @@
   <small class="text-muted">Clique no botão para Entrar ou Cadastrar</small>
 
 </h3>
-  <button class="btn btn-primary btn-lg btn-block" href="#modal" data-toggle="modal" data-target="#modal">Entre ou Cadastre-se</button>
+         
+  <button class="form-control btn btn-primary btn-lg btn-block" href="#modal" data-toggle="modal" data-target="#modal">
+    Entre ou Cadastre-se
+  </button>
+
 
 <h2 class="mt-3">Projeto utilizando Bootstrap 4 e CakePHP</h2>  
 <p class="lead mt-3">Projeto utilizando Bootstrap 4 e CakePHP</p>
@@ -27,10 +31,12 @@
       <div class="modal-header">
         <ul class="nav nav-tabs" role="tablist">
           <li class="nav-item ml-5">
-            <a class="nav-link active" href="#login" role="tab" data-toggle="tab">Entrar</a>
+            <a class="nav-link active" href="#login" role="tab" data-toggle="tab">
+                <i class="fas fa-user pr-1"></i>Entrar</a>
           </li>
           <li class="nav-item ml-5">
-            <a class="nav-link" href="#cadastro" role="tab" data-toggle="tab">Cadastrar</a>
+            <a class="nav-link" href="#cadastro" role="tab" data-toggle="tab">
+                <i class="fas fa-sign-in-alt pr-1"></i>Cadastrar</a>
           </li>
         </ul>
       </div>
@@ -60,9 +66,9 @@
 
             <!-- Button -->
             <div class="control-group">
-              <label class="control-label" for="signin"></label>
+              <label class="control-label" for="entrar"></label>
               <div class="controls">
-                <button id="signin" name="signin" class="btn btn-success">Entrar</button><!-- TAB CADASTRO-->
+                <button id="entrar" name="entrar" class="btn btn-success">Entrar</button><!-- TAB CADASTRO-->
               </div>
             </div>
             </fieldset>

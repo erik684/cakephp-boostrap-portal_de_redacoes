@@ -2,7 +2,7 @@
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
-
+use Cake\Auth\DefaultPasswordHasher;
 /**
  * Usuario Entity
  *
@@ -28,4 +28,9 @@ class Usuario extends Entity
         'sobrenome_usuario' => true,
         'senha' => true
     ];
+
+    protected function _setSenha($senha)
+    {
+        return (new DefaultPasswordHasher) ->hash($senha);
+    }
 }

@@ -29,7 +29,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
     <?= $this->Html->css('bootstrap.min.css') ?>
-    <?= $this->Html->css('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css') ?>
+    <?= $this->Html->css('https://use.fontawesome.com/releases/v5.0.8/css/all.css') ?>
 
     <?= $this->Html->script('https://code.jquery.com/jquery-3.2.1.js') ?>
     <?= $this->Html->script('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js') ?>
@@ -64,8 +64,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
           <li class="nav-item">
             <a class="nav-link" href="#">Sobre</a>
           </li>
-        </ul>      
-          <button class="btn btn-secondary my-2 my-sm-0" data-toggle="modal" data-target="#modal">ENTRAR/CADASTRAR</button>
+        </ul>
+          <button class="btn btn-default my-2 my-sm-0" data-toggle="modal" data-target="#modal">ENTRAR/CADASTRAR</button>
       </div>
     </nav>
 
