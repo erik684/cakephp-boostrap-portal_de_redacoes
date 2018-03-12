@@ -1,0 +1,25 @@
+Um site CRUD o onde usuário cadastrado ira postar as suas redações.
+Outro professor cadastrado poderá avaliar também as avaliãções postadas.
+
+CREATE DATABASE redacao_db;
+USE redacao_db;
+
+CREATE TABLE usuarios (
+	id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    nome_usuario VARCHAR (40) NOT NULL,
+    sobrenome_usuario VARCHAR (40) NOT NULL,
+    senha VARCHAR (255) NOT NULL    
+);
+
+CREATE TABLE redacoes (
+	id_redacao INT AUTO_INCREMENT PRIMARY KEY,
+    texto VARCHAR(500) NOT NULL,
+    palavras_chaves VARCHAR(40),
+    nota INT NOT NULL,
+    created DATETIME,
+    modified DATETIME,
+    id_usuario INT,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
+);
+
+ALTER TABLE `redacoes` ADD CONSTRAINT `fk_usuario` FOREIGN KEY ( `id_usuario` ) REFERENCES `usuarios` ( `id_usuario` ) ;
