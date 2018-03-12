@@ -64,7 +64,9 @@ class UsuariosTable extends Table
             ->maxLength('senha', 255)
             ->requirePresence('senha', 'create')
             ->notEmpty('senha');
-
+        $validator
+            ->sameAs('senha2', 'senha', 'As senhas digitadas são diferentes. Digite novamente.');
+            
         return $validator;
     }
 }

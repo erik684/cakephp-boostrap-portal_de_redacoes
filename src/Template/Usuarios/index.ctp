@@ -36,7 +36,7 @@
       </div>
       <div class="modal-body">
 
-        <!-- Tab panes -->
+        <!-- TAB LOGIN -->
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane fade in active show" id="login">
             <form class="form-horizontal"> 
@@ -69,44 +69,46 @@
             </form>
           </div>
 
-
+          <!-- TAB CADASTRO -->
           <div role="tabpanel" class="tab-pane fade" id="cadastro">
-            <form class="form-horizontal"> 
+            <?= $this->Form->create($usuario, ['type' => 'post'])?> 
             <fieldset>
 
             <!-- nome input-->
-            <div class="control-group">
-              <label class="control-label" for="userid">Nome:</label>
-              <div class="controls">
-                <input required="" id="userid" name="userid" type="text" class="form-control" placeholder="JoeSixpack" class="input-medium" required="">
-              </div>
-            </div>
+            <?= $this->Form->control('nome_usuario',
+            ['class' => 'form-control input-medium',
+            'placeholder' => 'Ex.: Julio, Lucas, Angela']) ?>
 
             <!-- sobrenome input-->
-            <div class="control-group">
-              <label class="control-label" for="userid">Sobrenome:</label>
-              <div class="controls">
-                <input required="" id="userid" name="userid" type="text" class="form-control" placeholder="JoeSixpack" class="input-medium" required="">
-              </div>
-            </div>
+            <?= $this->Form->control('sobrenome_usuario',
+            ['class' => 'form-control input-medium'] ) ?>
 
             <!-- senha input-->
-            <div class="control-group">
-              <label class="control-label" for="passwordinput">Senha:</label>
-              <div class="controls">
-                <input required="" id="passwordinput" name="passwordinput" class="form-control" type="password" placeholder="********" class="input-medium">
-              </div>
-            </div>
+            <?= $this->Form->control('senha',
+            ['class' => 'form-control input-medium',
+            'placeholder' => '********',
+            'type' => 'password']) ?>
+
+            <!-- senha input-->
+            <?= $this->Form->control('senha2',
+            ['class' => 'form-control input-medium',
+            'placeholder' => '********',
+            'type' => 'password',
+            'label' => 'Confirmar senha']) ?>
 
             <!-- Button -->
             <div class="control-group">
-              <label class="control-label" for="signin"></label>
+              <label class="control-label" for="cadastro"></label>
               <div class="controls">
-                <button id="signin" name="signin" class="btn btn-success">Cadastrar</button><!-- TAB CADASTRO-->
+                <?= $this->Form->button(__('Cadastrar'), 
+                ['name' => 'btn_cadastro', 
+                'class' => 'btn btn-success'])  ?>
               </div>
             </div>
+            
+
             </fieldset>
-            </form>   
+            <?= $this->Form->end()?>   
           </div>
 
         </div>

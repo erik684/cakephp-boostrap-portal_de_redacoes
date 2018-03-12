@@ -20,9 +20,17 @@ class UsuariosController extends AppController
      */
     public function index()
     {
-        $usuarios = $this->paginate($this->Usuarios);
+        $usuario = $this->Usuarios->newEntity();
+        if ($this->request->is('post')) {
+            $usuario = $this->Usuarios->patchEntity($usuario, $this->request->getData());
+            if ($this->Usuarios->save($usuario)) {
+                $this->Flash->success(__('Usuário cadastrado com sucesso!'));
 
-        $this->set(compact('usuarios'));
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('Usuário não foi cadastrado. Tente novamente'));
+        }
+        $this->set(compact('usuario'));
     }
 
     /**
