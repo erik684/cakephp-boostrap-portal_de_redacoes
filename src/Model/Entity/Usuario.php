@@ -29,8 +29,18 @@ class Usuario extends Entity
         'senha' => true
     ];
 
+    protected function _setNome_usuario($nome_usuario)
+    {
+        return (strtolower($nome_usuario));
+    }
+
+    protected function _setSobrenome_usuario($sobrenome_usuario)
+    {
+        return (strtolower($sobrenome_usuario));
+    }
+
     protected function _setSenha($senha)
     {
-        return (new DefaultPasswordHasher) ->hash($senha);
+        return (new DefaultPasswordHasher)->hash($senha);
     }
 }

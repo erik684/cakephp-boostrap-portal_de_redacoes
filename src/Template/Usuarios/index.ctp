@@ -45,49 +45,46 @@
         <!-- TAB LOGIN -->
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane fade in active show" id="login">
-            <form class="form-horizontal"> 
+            <?= $this->Form->create($usuario, ['type' => 'post', 'url' => ['action' => 'login']]) ?>
+
             <fieldset>
 
             <!-- nome input-->
-            <div class="control-group">
-              <label class="control-label" for="userid">Nome:</label>
-              <div class="controls">
-                <input required="" id="userid" name="userid" type="text" class="form-control" placeholder="JoeSixpack" class="input-medium" required="">
-              </div>
-            </div>
+            <?= $this->Form->control('nome_usuario', 
+            ['class' => 'form-control input-medium',
+            'placeholder' => 'Ex.: Julio, Lucas, Angela',
+            'label' => 'Nome']) ?>
 
             <!-- senha input-->
-            <div class="control-group">
-              <label class="control-label" for="passwordinput">Senha:</label>
-              <div class="controls">
-                <input required="" id="passwordinput" name="passwordinput" class="form-control" type="password" placeholder="********" class="input-medium">
-              </div>
-            </div>
+            <?= $this->Form->control('senha',
+            ['class' => 'form-control input-medium',
+            'placeholder' => '*********']) ?>
 
             <!-- Button -->
-            <div class="control-group">
-              <label class="control-label" for="entrar"></label>
-              <div class="controls">
-                <button id="entrar" name="entrar" class="btn btn-success">Entrar</button><!-- TAB CADASTRO-->
-              </div>
-            </div>
+            <?= $this->Form->button(__('Entrar'), 
+            ['class' => 'btn btn-success']) ?>
+
             </fieldset>
-            </form>
+            <?= $this->Form->end() ?>
+
           </div>
 
           <!-- TAB CADASTRO -->
           <div role="tabpanel" class="tab-pane fade" id="cadastro">
-            <?= $this->Form->create($usuario, ['type' => 'post'])?> 
+            <?= $this->Form->create($usuario, ['type' => 'post', 'url' => ['action' => 'cadastrar']])?> 
             <fieldset>
 
             <!-- nome input-->
             <?= $this->Form->control('nome_usuario',
             ['class' => 'form-control input-medium',
-            'placeholder' => 'Ex.: Julio, Lucas, Angela']) ?>
+            'placeholder' => 'Ex.: Julio, Lucas, Angela',
+            'label' => 'Nome']) ?>
 
             <!-- sobrenome input-->
             <?= $this->Form->control('sobrenome_usuario',
-            ['class' => 'form-control input-medium'] ) ?>
+            ['class' => 'form-control input-medium',
+            'placeholder' => 'Ex.: Cesar, Silva, Santos',
+            'label' => 'sobrenome'] ) ?>
 
             <!-- senha input-->
             <?= $this->Form->control('senha',
@@ -95,12 +92,12 @@
             'placeholder' => '********',
             'type' => 'password']) ?>
 
-            <!-- senha input-->
+            <!-- confirmar senha input-->
             <?= $this->Form->control('senha2',
             ['class' => 'form-control input-medium',
             'placeholder' => '********',
             'type' => 'password',
-            'label' => 'Confirmar senha']) ?>
+            'label' => 'Confirmar Senha']) ?>
 
             <!-- Button -->
             <div class="control-group">

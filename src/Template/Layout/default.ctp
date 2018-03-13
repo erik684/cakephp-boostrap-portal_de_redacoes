@@ -51,6 +51,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
       </button>
 
       <div class="collapse navbar-collapse" id="navbarColor01">
+
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
@@ -65,7 +66,17 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <a class="nav-link" href="#">Sobre</a>
           </li>
         </ul>
-          <button class="btn btn-default my-2 my-sm-0" data-toggle="modal" data-target="#modal">ENTRAR/CADASTRAR</button>
+          <?php 
+          if (!$loggedIn) { ?>
+            <button class="btn btn-default my-2 my-sm-0" data-toggle="modal" data-target="#modal">ENTRAR/CADASTRAR</button>
+          <?php } else {  
+            echo $this->Form->create($x = 0, ['type' => 'post', 'url' => ['action' => 'sair']]);        
+            echo $this->Form->button(__('SAIR'), 
+            ['class' => 'btn btn-danger my-2 my-sm-0',
+            'controller' => 'usuarios', 'action' => 'sair']);
+          } ?>
+
+
       </div>
     </nav>
 
@@ -78,7 +89,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <!-- FOOTER -->
     <footer class="footer stick-footer mb-3"> <!-- FOOTER -->
         <span class="text-muted"><i>Erik Aleixo: </i></span>      
-        <span class="fa fa-github-alt fa-lg mr-1"></span><a href="https:\\www.github.com/erik684/">github.com/erik684/</a>
+        <span class="fab fa-github fa-lg mr-1"></span><a href="https:\\www.github.com/erik684/">github.com/erik684/</a>
     </footer>
 </div>
 </body>

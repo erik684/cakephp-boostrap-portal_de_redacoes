@@ -27,7 +27,6 @@ use Cake\Event\Event;
  */
 class AppController extends Controller
 {
-
     /**
      * Initialization hook method.
      *
@@ -43,6 +42,20 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'loginAction' => [
+                'controller' => 'Usuarios',
+                'action' => 'index'
+            ],
+            'authError' => 'Você não pode acessar essa página antes de Entrar ou Cadastrar!',
+            'authenticate' => [
+                'Form' => [
+                    'userModel' => 'Usuarios',
+                    'fields' => ['username' => 'nome_usuario', 'password' => 'senha']
+                ]
+            ],
+            'storage' => 'Session'
+        ]);
 
         /*
          * Enable the following components for recommended CakePHP security settings.
@@ -50,5 +63,14 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
         //$this->loadComponent('Csrf');
+    }
+
+    public function beforeRender (Event $event) 
+    {
+        if ($this->request->session()->read('Auth.User')) {
+            $this->set('loggedIn', true);
+        } else {
+            $this->set('loggedIn', false);
+        }
     }
 }
