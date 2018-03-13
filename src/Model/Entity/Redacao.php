@@ -14,7 +14,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $modified
  * @property int $id_usuario
  */
-class Redaco extends Entity
+class Redacao extends Entity
 {
 
     /**

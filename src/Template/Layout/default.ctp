@@ -53,6 +53,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
       <div class="collapse navbar-collapse" id="navbarColor01">
 
         <ul class="navbar-nav mr-auto">
+          <?php if($loggedIn) { ?>
           <li class="nav-item active">
             <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
           </li>
@@ -65,6 +66,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
           <li class="nav-item">
             <a class="nav-link" href="#">Sobre</a>
           </li>
+          <?php } ?>
         </ul>
           <?php 
           if (!$loggedIn) { ?>
