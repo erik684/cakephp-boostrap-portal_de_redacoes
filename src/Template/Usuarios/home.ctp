@@ -21,3 +21,67 @@
 </div>
 
 </div>
+
+<hr>
+
+<div class="container">
+<h2>Ultimas redações: </h2>
+
+<div class="row">
+
+	<div class="col-md-4">
+		<div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+		  <div class="card-header"><i>Nome Usuário</i>
+			<i class="float right">
+			<span class="fas fa-star"></span>
+		  	<span class="fas fa-star"></span>
+		  	<span class="fas fa-star"></span> 
+		  	<span class="far fa-star"></span>
+		  	<span class="far fa-star"></span>
+			</i>
+		  </div>
+		  <div class="card-body">
+		    <h4 class="card-title">Titulo Redação</h4>
+		    <p class="card-text">Some quick example text to build on the card title and make up the bulk ofntadsadsasddasads... <a class="float-right badge badge-info" href="">Continuar Lendo <i class="fas fa-book"></i></a></p>
+		  </div>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+		  <div class="card-header"><i>Nome Usuário</i>
+			<i class="float right">
+			<span class="fas fa-star"></span>
+		  	<span class="fas fa-star"></span>
+		  	<span class="fas fa-star"></span> 
+		  	<span class="fas fa-star"></span>
+		  	<span class="far fa-star"></span>
+			</i>
+		  </div>
+		  <div class="card-body">
+		    <h4 class="card-title">Titulo Redação</h4>
+		    <p class="card-text">Some quick example text to build on the card title and make up the bulk ofntadsadsasddasads... <a class="float-right badge badge-info" href="">Continuar Lendo <i class="fas fa-book"></i></a></p>
+		  </div>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
+		  <div class="card-header"><i>Nome Usuário</i>
+			<i class="float right">
+			<span class="fas fa-star"></span>
+		  	<span class="far fa-star"></span>
+		  	<span class="far fa-star"></span> 
+		  	<span class="far fa-star"></span>
+		  	<span class="far fa-star"></span>
+			</i>
+		  </div>
+		  <div class="card-body">
+		    <h4 class="card-title">Titulo Redação</h4>
+		    <p class="card-text">Some quick example text to build on the card title and make up the bulk ofntadsadsasddasads... <a class="float-right badge badge-info" href="">Continuar Lendo <i class="fas fa-book"></i></a></p>
+		  </div>
+		</div>
+	</div>
+</div>
+
+</div>

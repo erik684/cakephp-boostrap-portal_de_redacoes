@@ -1,5 +1,6 @@
 Um site CRUD o onde usuário cadastrado ira postar as suas redações.
-Outro professor cadastrado poderá avaliar também as avaliãções postadas.
+Outro alunos cadastrado poderá avaliar também as redações postadas.
+//criar TITULO para redacao
 
 CREATE DATABASE redacao_db;
 USE redacao_db;
