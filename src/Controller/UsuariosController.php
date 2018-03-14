@@ -56,13 +56,13 @@ class UsuariosController extends AppController
 
                 if ($usuario) {
                     $this->Auth->setUser($usuario);  
+
                     $this->Flash->success(__('Bem vindo!'));
                         return $this->redirect(['controller' => 'Usuarios', 'action' => 'home']);
                 }
                 $this->Flash->error(__('Nome de Usuário ou Senha incorreta. Tente novamente.'));
            }
        }
-
     }
 
     public function sair() 
@@ -75,7 +75,12 @@ class UsuariosController extends AppController
 
     public function home()
     {
-    
+        $this->set('auth', $this->Auth->User('nome_usuario'));
+    }
+
+    public function redacoes()
+    {
+        
     }
 
     /**

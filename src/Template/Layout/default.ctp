@@ -41,11 +41,11 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
-<body>
+<body style="background-color: #F5F3EE">
     
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary"><!-- NAVBAR -->
-      <a class="navbar-brand" href="#">#meusTextos</a>
+      <a class="navbar-brand" href="home">#meusTextos</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -55,7 +55,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <ul class="navbar-nav mr-auto">
           <?php if($loggedIn) { ?>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="home">Inicio <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="redacoes">Redações</a>
