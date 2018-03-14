@@ -60,6 +60,7 @@ class UsuariosController extends AppController
                     $this->Flash->success(__('Bem vindo!'));
                         return $this->redirect(['controller' => 'Usuarios', 'action' => 'home']);
                 }
+                $this->redirect(['action' => 'index']);
                 $this->Flash->error(__('Nome de Usuário ou Senha incorreta. Tente novamente.'));
            }
        }
