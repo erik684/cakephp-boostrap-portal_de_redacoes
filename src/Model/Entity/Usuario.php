@@ -26,7 +26,7 @@ class Usuario extends Entity
     protected $_accessible = [
         'nome_usuario' => true,
         'sobrenome_usuario' => true,
-        'senha' => true
+        'senha' => false
     ];
 
     protected function _setNome_usuario($nome_usuario)

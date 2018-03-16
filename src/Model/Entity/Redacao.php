@@ -4,7 +4,7 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Redaco Entity
+ * Redacao Entity
  *
  * @property int $id_redacao
  * @property string $texto

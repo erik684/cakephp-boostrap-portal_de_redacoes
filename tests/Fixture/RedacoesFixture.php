@@ -48,8 +48,8 @@ class RedacoesFixture extends TestFixture
             'texto' => 'Lorem ipsum dolor sit amet',
             'palavras_chaves' => 'Lorem ipsum dolor sit amet',
             'nota' => 1,
-            'created' => '2018-03-12 00:17:07',
-            'modified' => '2018-03-12 00:17:07',
+            'created' => '2018-03-14 22:18:04',
+            'modified' => '2018-03-14 22:18:04',
             'id_usuario' => 1
         ],
     ];

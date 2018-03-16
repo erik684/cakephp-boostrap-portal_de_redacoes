@@ -1,48 +1,48 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Redaco $redaco
+ * @var \App\Model\Entity\Redacao $redacao
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Redaco'), ['action' => 'edit', $redaco->id_redacao]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Redaco'), ['action' => 'delete', $redaco->id_redacao], ['confirm' => __('Are you sure you want to delete # {0}?', $redaco->id_redacao)]) ?> </li>
+        <li><?= $this->Html->link(__('Edit Redacao'), ['action' => 'edit', $redacao->id_redacao]) ?> </li>
+        <li><?= $this->Form->postLink(__('Delete Redacao'), ['action' => 'delete', $redacao->id_redacao], ['confirm' => __('Are you sure you want to delete # {0}?', $redacao->id_redacao)]) ?> </li>
         <li><?= $this->Html->link(__('List Redacoes'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Redaco'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('New Redacao'), ['action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="redacoes view large-9 medium-8 columns content">
-    <h3><?= h($redaco->id_redacao) ?></h3>
+    <h3><?= h($redacao->id_redacao) ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Texto') ?></th>
-            <td><?= h($redaco->texto) ?></td>
+            <td><?= h($redacao->texto) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Palavras Chaves') ?></th>
-            <td><?= h($redaco->palavras_chaves) ?></td>
+            <td><?= h($redacao->palavras_chaves) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id Redacao') ?></th>
-            <td><?= $this->Number->format($redaco->id_redacao) ?></td>
+            <td><?= $this->Number->format($redacao->id_redacao) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Nota') ?></th>
-            <td><?= $this->Number->format($redaco->nota) ?></td>
+            <td><?= $this->Number->format($redacao->nota) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id Usuario') ?></th>
-            <td><?= $this->Number->format($redaco->id_usuario) ?></td>
+            <td><?= $this->Number->format($redacao->id_usuario) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Created') ?></th>
-            <td><?= h($redaco->created) ?></td>
+            <td><?= h($redacao->created) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Modified') ?></th>
-            <td><?= h($redaco->modified) ?></td>
+            <td><?= h($redacao->modified) ?></td>
         </tr>
     </table>
 </div>

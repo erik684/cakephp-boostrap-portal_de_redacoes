@@ -2543,16 +2543,16 @@
         },
         {
             "name": "wyrihaximus/twig-view",
-            "version": "4.3.2",
+            "version": "4.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/TwigView.git",
-                "reference": "63a5bc4307a5d47b24290013c3c0433903c5757a"
+                "reference": "f9be3b19c63ad1cf8bbf43ce39278e2d81ab4ba3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/TwigView/zipball/63a5bc4307a5d47b24290013c3c0433903c5757a",
-                "reference": "63a5bc4307a5d47b24290013c3c0433903c5757a",
+                "url": "https://api.github.com/repos/WyriHaximus/TwigView/zipball/f9be3b19c63ad1cf8bbf43ce39278e2d81ab4ba3",
+                "reference": "f9be3b19c63ad1cf8bbf43ce39278e2d81ab4ba3",
                 "shasum": ""
             },
             "require": {
@@ -2597,7 +2597,7 @@
                 "twig",
                 "view"
             ],
-            "time": "2018-02-21T06:55:17+00:00"
+            "time": "2018-03-14T12:31:27+00:00"
         }
     ],
     "aliases": [],

@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Redaco $redaco
+ * @var \App\Model\Entity\Redacao $redacao
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
@@ -11,9 +11,9 @@
     </ul>
 </nav>
 <div class="redacoes form large-9 medium-8 columns content">
-    <?= $this->Form->create($redaco) ?>
+    <?= $this->Form->create($redacao) ?>
     <fieldset>
-        <legend><?= __('Add Redaco') ?></legend>
+        <legend><?= __('Add Redacao') ?></legend>
         <?php
             echo $this->Form->control('texto');
             echo $this->Form->control('palavras_chaves');

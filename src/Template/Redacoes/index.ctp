@@ -1,13 +1,13 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Redaco[]|\Cake\Collection\CollectionInterface $redacoes
+ * @var \App\Model\Entity\Redacao[]|\Cake\Collection\CollectionInterface $redacoes
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Redaco'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('New Redacao'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="redacoes index large-9 medium-8 columns content">
@@ -26,19 +26,19 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($redacoes as $redaco): ?>
+            <?php foreach ($redacoes as $redacao): ?>
             <tr>
-                <td><?= $this->Number->format($redaco->id_redacao) ?></td>
-                <td><?= h($redaco->texto) ?></td>
-                <td><?= h($redaco->palavras_chaves) ?></td>
-                <td><?= $this->Number->format($redaco->nota) ?></td>
-                <td><?= h($redaco->created) ?></td>
-                <td><?= h($redaco->modified) ?></td>
-                <td><?= $this->Number->format($redaco->id_usuario) ?></td>
+                <td><?= $this->Number->format($redacao->id_redacao) ?></td>
+                <td><?= h($redacao->texto) ?></td>
+                <td><?= h($redacao->palavras_chaves) ?></td>
+                <td><?= $this->Number->format($redacao->nota) ?></td>
+                <td><?= h($redacao->created) ?></td>
+                <td><?= h($redacao->modified) ?></td>
+                <td><?= $this->Number->format($redacao->id_usuario) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $redaco->id_redacao]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $redaco->id_redacao]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $redaco->id_redacao], ['confirm' => __('Are you sure you want to delete # {0}?', $redaco->id_redacao)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $redacao->id_redacao]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $redacao->id_redacao]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $redacao->id_redacao], ['confirm' => __('Are you sure you want to delete # {0}?', $redacao->id_redacao)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

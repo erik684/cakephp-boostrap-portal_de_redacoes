@@ -81,7 +81,9 @@ class UsuariosController extends AppController
 
     public function redacoes()
     {
-        
+        $this->loadModel('Redacoes');
+        $redacao = $this->Redacoes->find('all', ['contain' => ['Usuarios']]);
+        $this->set('redacao', $redacao);
     }
 
     /**

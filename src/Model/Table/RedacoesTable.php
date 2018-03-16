@@ -9,13 +9,13 @@ use Cake\Validation\Validator;
 /**
  * Redacoes Model
  *
- * @method \App\Model\Entity\Redaco get($primaryKey, $options = [])
- * @method \App\Model\Entity\Redaco newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\Redaco[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\Redaco|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Redaco patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\Redaco[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\Redaco findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\Redacao get($primaryKey, $options = [])
+ * @method \App\Model\Entity\Redacao newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\Redacao[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\Redacao|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Redacao patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\Redacao[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\Redacao findOrCreate($search, callable $callback = null, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
@@ -35,7 +35,7 @@ class RedacoesTable extends Table
         $this->setTable('redacoes');
         $this->setDisplayField('id_redacao');
         $this->setPrimaryKey('id_redacao');
-
+        $this->belongsTo('Usuarios', ['foreignKey' => 'id_usuario']);
         $this->addBehavior('Timestamp');
     }
 
