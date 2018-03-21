@@ -84,7 +84,13 @@
             <?= $this->Form->control('sobrenome_usuario',
             ['class' => 'form-control input-medium',
             'placeholder' => 'Ex.: Cesar, Silva, Santos',
-            'label' => 'sobrenome'] ) ?>
+            'label' => 'Sobrenome'] ) ?>
+
+            <!-- apelido input-->
+            <?= $this->Form->control('apelido_usuario',
+            ['class' => 'form-control input-medium',
+            'placeholder' => 'Ex.: marcos2018, juliosk8, as28luana',
+            'label' => 'Apelido'] ) ?>
 
             <!-- senha input-->
             <?= $this->Form->control('senha',

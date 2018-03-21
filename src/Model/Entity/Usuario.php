@@ -3,12 +3,14 @@ namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
 use Cake\Auth\DefaultPasswordHasher;
+
 /**
  * Usuario Entity
  *
  * @property int $id_usuario
  * @property string $nome_usuario
  * @property string $sobrenome_usuario
+ * @property string $apelido_usuario
  * @property string $senha
  */
 class Usuario extends Entity
@@ -26,7 +28,8 @@ class Usuario extends Entity
     protected $_accessible = [
         'nome_usuario' => true,
         'sobrenome_usuario' => true,
-        'senha' => false
+        'apelido_usuario' => true,
+        'senha' => true
     ];
 
     protected function _setNome_usuario($nome_usuario)

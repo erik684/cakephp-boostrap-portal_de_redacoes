@@ -17,20 +17,20 @@
     <h3><?= h($redacao->id_redacao) ?></h3>
     <table class="vertical-table">
         <tr>
+            <th scope="row"><?= __('Titulo') ?></th>
+            <td><?= h($redacao->titulo) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Texto') ?></th>
             <td><?= h($redacao->texto) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Palavras Chaves') ?></th>
-            <td><?= h($redacao->palavras_chaves) ?></td>
+            <th scope="row"><?= __('Nota') ?></th>
+            <td><?= h($redacao->nota) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id Redacao') ?></th>
             <td><?= $this->Number->format($redacao->id_redacao) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Nota') ?></th>
-            <td><?= $this->Number->format($redacao->nota) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id Usuario') ?></th>

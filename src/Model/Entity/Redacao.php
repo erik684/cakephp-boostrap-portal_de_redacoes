@@ -7,9 +7,9 @@ use Cake\ORM\Entity;
  * Redacao Entity
  *
  * @property int $id_redacao
+ * @property string $titulo
  * @property string $texto
- * @property string $palavras_chaves
- * @property int $nota
+ * @property string $nota
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  * @property int $id_usuario
@@ -27,8 +27,8 @@ class Redacao extends Entity
      * @var array
      */
     protected $_accessible = [
+        'titulo' => true,
         'texto' => true,
-        'palavras_chaves' => true,
         'nota' => true,
         'created' => true,
         'modified' => true,

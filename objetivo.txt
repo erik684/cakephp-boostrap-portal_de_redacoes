@@ -1,6 +1,6 @@
-Um site CRUD o onde usuário cadastrado ira postar as suas redações.
+/*Um site CRUD o onde usuário cadastrado ira postar as suas redações.
 Outro alunos cadastrado poderá avaliar também as redações postadas.
-//criar TITULO para redacao
+criar TITULO para redacao */
 
 CREATE DATABASE redacao_db;
 USE redacao_db;
@@ -9,6 +9,7 @@ CREATE TABLE usuarios (
 	id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     nome_usuario VARCHAR (40) NOT NULL,
     sobrenome_usuario VARCHAR (40) NOT NULL,
+    apelido_usuario VARCHAR (40) NOT NULL,
     senha VARCHAR (255) NOT NULL    
 );
 
@@ -28,16 +29,20 @@ CREATE TABLE redacoes (
 
 ALTER TABLE `redacoes` ADD CONSTRAINT `fk_usuario` FOREIGN KEY ( `id_usuario` ) REFERENCES `usuarios` ( `id_usuario` ) ;
 
+CREATE DATABASE redacao_db;
+USE redacao_db;
 CREATE TABLE `usuarios` (
     `id_usuario` INT NOT NULL AUTO_INCREMENT,
     `nome_usuario` varchar(40) NOT NULL,
     `sobrenome_usuario` varchar(40) NOT NULL,
+    `apelido_usuario` varchar(40) NOT NULL,
     `senha` varchar(255) NOT NULL,
     PRIMARY KEY (`id_usuario`)
 );
 
 CREATE TABLE `redacoes` (
     `id_redacao` INT NOT NULL AUTO_INCREMENT,
+    `titulo` varchar(50) NOT NULL,
     `texto` varchar(500) NOT NULL,
     `nota` varchar(500),
     `created` DATETIME NOT NULL,

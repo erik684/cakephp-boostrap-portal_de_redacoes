@@ -15,8 +15,8 @@
     <fieldset>
         <legend><?= __('Add Redacao') ?></legend>
         <?php
+            echo $this->Form->control('titulo');
             echo $this->Form->control('texto');
-            echo $this->Form->control('palavras_chaves');
             echo $this->Form->control('nota');
             echo $this->Form->control('id_usuario');
         ?>

@@ -60,13 +60,18 @@ class UsuariosTable extends Table
             ->notEmpty('sobrenome_usuario');
 
         $validator
+            ->scalar('apelido_usuario')
+            ->maxLength('apelido_usuario', 40)
+            ->requirePresence('apelido_usuario', 'create')
+            ->notEmpty('apelido_usuario');
+        $validator
             ->scalar('senha')
             ->maxLength('senha', 255)
             ->requirePresence('senha', 'create')
             ->notEmpty('senha');
         $validator
-            ->sameAs('senha2', 'senha', 'As senhas digitadas são diferentes. Digite novamente.');
-            
+            ->sameAs('senha2', 'senha', 'As senhas digitadas são diferentes. Digite novamente.');    
+
         return $validator;
     }
 }

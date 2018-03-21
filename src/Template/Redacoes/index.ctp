@@ -16,8 +16,8 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id_redacao') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('titulo') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('texto') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('palavras_chaves') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nota') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
@@ -29,9 +29,9 @@
             <?php foreach ($redacoes as $redacao): ?>
             <tr>
                 <td><?= $this->Number->format($redacao->id_redacao) ?></td>
+                <td><?= h($redacao->titulo) ?></td>
                 <td><?= h($redacao->texto) ?></td>
-                <td><?= h($redacao->palavras_chaves) ?></td>
-                <td><?= $this->Number->format($redacao->nota) ?></td>
+                <td><?= h($redacao->nota) ?></td>
                 <td><?= h($redacao->created) ?></td>
                 <td><?= h($redacao->modified) ?></td>
                 <td><?= $this->Number->format($redacao->id_usuario) ?></td>

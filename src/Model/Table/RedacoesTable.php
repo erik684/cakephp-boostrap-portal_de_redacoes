@@ -35,8 +35,8 @@ class RedacoesTable extends Table
         $this->setTable('redacoes');
         $this->setDisplayField('id_redacao');
         $this->setPrimaryKey('id_redacao');
-        $this->belongsTo('Usuarios', ['foreignKey' => 'id_usuario']);
         $this->addBehavior('Timestamp');
+        $this->belongsTo('Usuarios', ['foreignKey' => 'id_usuario']);
     }
 
     /**
@@ -52,24 +52,26 @@ class RedacoesTable extends Table
             ->allowEmpty('id_redacao', 'create');
 
         $validator
+            ->scalar('titulo')
+            ->maxLength('titulo', 50)
+            ->requirePresence('titulo', 'create')
+            ->notEmpty('titulo');
+
+        $validator
             ->scalar('texto')
             ->maxLength('texto', 500)
             ->requirePresence('texto', 'create')
             ->notEmpty('texto');
 
         $validator
-            ->scalar('palavras_chaves')
-            ->maxLength('palavras_chaves', 40)
-            ->allowEmpty('palavras_chaves');
-
-        $validator
-            ->integer('nota')
-            ->requirePresence('nota', 'create')
-            ->notEmpty('nota');
+            ->scalar('nota')
+            ->maxLength('nota', 500)
+            ->allowEmpty('nota');
 
         $validator
             ->integer('id_usuario')
-            ->allowEmpty('id_usuario');
+            ->requirePresence('id_usuario', 'create')
+            ->notEmpty('id_usuario');
 
         return $validator;
     }
