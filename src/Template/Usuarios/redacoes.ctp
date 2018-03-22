@@ -6,8 +6,8 @@
 
 <div class="row">
 	<?php foreach ($redacao as $redacao) { ?>
-	<div class="col-md-4">
-		<div style="max-width: 20rem;" class="card text-white mb-3 
+	<div class="col-md-6">
+		<div style="max-width: 50rem;" class="card text-white mb-3 
 		<?php 
 		if ((int)$redacao->nota > 6) {
 			echo 'bg-success';
@@ -15,7 +15,8 @@
 			echo 'bg-info';
 		}
 		?>" >
-		  <div class="card-header"><i><?= $redacao->usuario->nome_usuario ?></i>
+		  <div class="card-header"><i><i class="far fa-user pr-1"></i><u><?= ucfirst($redacao->usuario->nome_usuario).' '.ucfirst($redacao->usuario->sobrenome_usuario) ?></u></i>
+		  	<span><?= $this->Time->timeagoinwords($redacao->created) ?></span>
 			<i class="float right">
 			<?php 
 			$nota = round(0.5 * (int)$redacao->nota);
@@ -32,8 +33,8 @@
 		  </div>
 		  <div class="card-body">
 		    <h4 class="card-title"><?= $redacao->titulo ?></h4>
-		    <p class="card-text"><?= substr($redacao->texto, 0, 90) ?>...
-		    	<a class="float-right badge badge-secondary" href="redacoes/<?= $redacao->id_redacao  ?>">Continuar Lendo <i class="fas fa-book"></i></a>
+		    <p class="card-text" style="font-size: 14px;"><?= substr($redacao->texto, 0, 150) ?>...
+		    	<a class="float-right badge badge-info" style="background-color: #6273e0e6; padding: 1.25em;" href="redacoes/<?= $redacao->id_redacao  ?>">Continuar Lendo <i class="fas fa-book"></i></a>
 		    </p>
 		  </div>
 		</div>
