@@ -4,7 +4,7 @@
 	<p>Aqui você pode enviar, visualizar ou avaliar as redações dos usuários.</p>
 </div>
 
-<div class="row">
+<div class="row redacoes">
 	<?php foreach ($redacao as $redacao) { ?>
 	<div class="col-md-6">
 		<div style="max-width: 50rem;" class="card text-white mb-3 
@@ -40,6 +40,18 @@
 		</div>
 	</div>
 	<?php } ?>
+</div>
+<div class="container">
+		<div class="paginator">
+		    <ul class="pagination pagination-lg">
+		        <?= $this->Paginator->first('<< ' . __('Primeira')) ?>
+		        <?= $this->Paginator->prev('< ' . __('Anterior')) ?>
+		        <?= $this->Paginator->numbers() ?>
+		        <?= $this->Paginator->next(__('Próxima') . ' >') ?>
+		        <?= $this->Paginator->last(__('Última') . ' >>') ?>
+		    </ul>
+		    <p><?= $this->Paginator->counter(['format' => __('Página {{page}} de {{pages}}, mostrando {{current}} redação(s) das {{count}} totais')]) ?></p>
+		</div>
 </div>
 
 <hr>

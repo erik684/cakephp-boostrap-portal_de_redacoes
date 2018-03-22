@@ -19,6 +19,14 @@ class UsuariosController extends AppController
         $this->Auth->allow(['index', 'login', 'cadastrar', 'sair']);
     }
 
+    public $paginate = [
+        'limit' => 25,
+        'order' => [
+            'Redacoes.created' => 'desc'
+        ],
+        'contain' => ['Usuarios']
+    ];
+
     /**
      * Index method
      *
@@ -83,7 +91,9 @@ class UsuariosController extends AppController
     {
         $this->loadModel('Redacoes');
         $redacao = $this->Redacoes->find('all', ['contain' => ['Usuarios']]);
+        $redacao = $this->paginate($this->Redacoes);
         $this->set('redacao', $redacao);
+
     }
 
     /**
