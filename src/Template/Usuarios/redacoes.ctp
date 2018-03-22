@@ -41,18 +41,30 @@
 	</div>
 	<?php } ?>
 </div>
+
 <div class="container">
-		<div class="paginator">
-		    <ul class="pagination pagination-lg">
-		        <?= $this->Paginator->first('<< ' . __('Primeira')) ?>
+		<div class="paginator pt-2">
+		    <ul class="pagination pagination-lg pb-2">
+		    	<?php
+		    	$this->Paginator->templates([
+		    	    'prevActive' => '<li class="page-item"><a class="page-link" href="{{url}}">{{text}}</a></li>',
+		    	    'prevDisabled' => '<li class="page-item disabled"><a class="page-link" href="{{url}}">{{text}}</a></li>',
+		    	    'number' => '<li class="page-item"><a class="page-link" href="{{url}}">{{text}}</a></li>',
+		    	    'current' => '<li class="page-item active"><a class="page-link" href="{{url}}">{{text}}</a></li>',
+		    	    'nextActive' => '<li class="page-item"><a class="page-link" href="{{url}}">{{text}}</a></li>',
+		    	    'nextDisabled' => '<li class="page-item disabled"><a class="page-link" href="{{url}}">{{text}}</a></li>'
+		    	]); 
+		    	?>
+
 		        <?= $this->Paginator->prev('< ' . __('Anterior')) ?>
+		            <li class="page-item">
 		        <?= $this->Paginator->numbers() ?>
+		    		</li>
 		        <?= $this->Paginator->next(__('Próxima') . ' >') ?>
-		        <?= $this->Paginator->last(__('Última') . ' >>') ?>
+
 		    </ul>
 		    <p><?= $this->Paginator->counter(['format' => __('Página {{page}} de {{pages}}, mostrando {{current}} redação(s) das {{count}} totais')]) ?></p>
 		</div>
 </div>
 
-<hr>
 </div>
