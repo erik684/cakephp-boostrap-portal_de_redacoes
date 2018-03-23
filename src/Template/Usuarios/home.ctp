@@ -8,14 +8,14 @@
 		<p>Deseja enviar uma redação e ser avaliado?</p>
 		<p>É só clicar logo abaixo.</p>
 		<p class="lead">
-		  <a class="btn btn-success btn-lg" href="#" role="button">Enviar redação</a>
+		  <a class="btn btn-success btn-lg" href="enviarRedacao" role="button">Enviar redação</a>
 		</p>
 	</div>
 	<div class="col-md-6">
 		<p>Quer ler e avaliar uma redação?</p>
 		<p>É só clicar logo abaixo.</p>
 		<p class="lead">
-		  <a class="btn btn-warning btn-lg" href="#" role="button">Ler redações</a>
+		  <a class="btn btn-warning btn-lg" href="redacoes" role="button">Ler redações</a>
 		</p>
 	</div>
 </div>
@@ -28,60 +28,29 @@
 <h2>Ultimas redações: </h2>
 
 <div class="row">
+<?php foreach ($redacao as $redacao) { ?>	
 
-	<div class="col-md-4">
-		<div class="card text-white bg-success mb-3" style="max-width: 20rem;">
-		  <div class="card-header"><i>Nome Usuário</i>
-			<i class="float right">
-			<span class="fas fa-star"></span>
-		  	<span class="fas fa-star"></span>
-		  	<span class="fas fa-star"></span> 
-		  	<span class="far fa-star"></span>
-		  	<span class="far fa-star"></span>
-			</i>
-		  </div>
-		  <div class="card-body">
-		    <h4 class="card-title">Titulo Redação</h4>
-		    <p class="card-text">Some quick example text to build on the card title and make up the bulk ofntadsadsasddasads... <a class="float-right badge badge-info" href="">Continuar Lendo <i class="fas fa-book"></i></a></p>
-		  </div>
-		</div>
-	</div>
-
-	<div class="col-md-4">
-		<div class="card text-white bg-success mb-3" style="max-width: 20rem;">
-		  <div class="card-header"><i>Nome Usuário</i>
-			<i class="float right">
-			<span class="fas fa-star"></span>
-		  	<span class="fas fa-star"></span>
-		  	<span class="fas fa-star"></span> 
-		  	<span class="fas fa-star"></span>
-		  	<span class="far fa-star"></span>
-			</i>
-		  </div>
-		  <div class="card-body">
-		    <h4 class="card-title">Titulo Redação</h4>
-		    <p class="card-text">Some quick example text to build on the card title and make up the bulk ofntadsadsasddasads... <a class="float-right badge badge-info" href="">Continuar Lendo <i class="fas fa-book"></i></a></p>
-		  </div>
-		</div>
-	</div>
-
-	<div class="col-md-4">
+	<div class="col-lg-4">
 		<div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
-		  <div class="card-header"><i>Nome Usuário</i>
+		  <div class="card-header"><i><?= ucfirst($redacao->usuario->nome_usuario).' '.ucfirst($redacao->usuario->sobrenome_usuario) ?></i>
 			<i class="float right">
-			<span class="fas fa-star"></span>
-		  	<span class="far fa-star"></span>
-		  	<span class="far fa-star"></span> 
-		  	<span class="far fa-star"></span>
-		  	<span class="far fa-star"></span>
+				<!-- IMPRIME QUANTIDADE DE ESTRELAS BASEADO NA NOTA -->
+				<?php 
+				$nota = round(0.5 * (int)$redacao->nota);
+					for ($x = 1; $x <= $nota; $x++) {
+						echo '<span class="fas fa-star"></span>';
+					}
+					for ($x = $nota; $x < 5; $x++) {
+						echo '<span class="far fa-star"></span>';
+					}
+				?>
 			</i>
 		  </div>
 		  <div class="card-body">
-		    <h4 class="card-title">Titulo Redação</h4>
-		    <p class="card-text">Some quick example text to build on the card title and make up the bulk ofntadsadsasddasads... <a class="float-right badge badge-info" href="">Continuar Lendo <i class="fas fa-book"></i></a></p>
+		    <h4 class="card-title"><?= ucfirst($redacao->titulo) ?></h4>
+		    <p class="card-text"><?= substr($redacao->texto, 0, 150) ?>... <a class="float-right badge badge-info" href="">Continuar Lendo <i class="fas fa-book"></i></a></p>
 		  </div>
 		</div>
 	</div>
-</div>
-
+<?php } ?>
 </div>

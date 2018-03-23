@@ -18,6 +18,7 @@
 		  <div class="card-header"><i><i class="far fa-user pr-1"></i><u><?= ucfirst($redacao->usuario->nome_usuario).' '.ucfirst($redacao->usuario->sobrenome_usuario) ?></u></i>
 		  	<span><?= $this->Time->timeagoinwords($redacao->created) ?></span>
 			<i class="float right">
+			<!-- IMPRIME QUANTIDADE DE ESTRELAS BASEADO NA NOTA -->
 			<?php 
 			$nota = round(0.5 * (int)$redacao->nota);
 				for ($x = 1; $x <= $nota; $x++) {
@@ -27,7 +28,6 @@
 					echo '<span class="far fa-star"></span>';
 				}
 			?>
-		  	<!-- <span class="far fa-star"></span> -->
 
 			</i>
 		  </div>

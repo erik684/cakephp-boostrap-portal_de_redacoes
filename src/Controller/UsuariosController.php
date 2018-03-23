@@ -85,6 +85,9 @@ class UsuariosController extends AppController
     public function home()
     {
         $this->set('auth', $this->Auth->User('nome_usuario'));
+        $this->loadModel('Redacoes');
+        $redacao = $this->Redacoes->find('all', ['contain' => 'Usuarios', 'order' => 'created DESC', 'limit' => 3]);
+        $this->set('redacao', $redacao);
     }
 
     public function redacoes()
@@ -94,6 +97,11 @@ class UsuariosController extends AppController
         $redacao = $this->paginate($this->Redacoes);
         $this->set('redacao', $redacao);
 
+    }
+
+    public function enviarRedacao()
+    {
+        
     }
 
     /**
