@@ -8,14 +8,14 @@
 		<p>Deseja enviar uma redação e ser avaliado?</p>
 		<p>É só clicar logo abaixo.</p>
 		<p class="lead">
-		  <a class="btn btn-success btn-lg" href="enviarRedacao" role="button">Enviar redação</a>
+		  <a class="btn btn-success btn-lg" href="redacaoSubmit" role="button"><i class="far fa-paper-plane pr-1"></i>Enviar redação</a>
 		</p>
 	</div>
 	<div class="col-md-6">
 		<p>Quer ler e avaliar uma redação?</p>
 		<p>É só clicar logo abaixo.</p>
 		<p class="lead">
-		  <a class="btn btn-warning btn-lg" href="redacoes" role="button">Ler redações</a>
+		  <a class="btn btn-warning btn-lg" href="redacoes" role="button"><i class="fas fa-paperclip pr-1"></i>Ler redações</a>
 		</p>
 	</div>
 </div>
@@ -25,6 +25,7 @@
 <hr>
 
 <div class="container">
+	<hr class="mt-0">
 <h2>Ultimas redações: </h2>
 
 <div class="row">
@@ -32,7 +33,8 @@
 
 	<div class="col-lg-4">
 		<div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
-		  <div class="card-header"><i><?= ucfirst($redacao->usuario->nome_usuario).' '.ucfirst($redacao->usuario->sobrenome_usuario) ?></i>
+			<div class="card-header"><i><i class="far fa-user pr-1"></i><u><?= ucfirst($redacao->usuario->nome_usuario).' '.ucfirst($redacao->usuario->sobrenome_usuario) ?></u></i>
+			<span><?= $this->Time->timeagoinwords($redacao->created) ?></span>
 			<i class="float right">
 				<!-- IMPRIME QUANTIDADE DE ESTRELAS BASEADO NA NOTA -->
 				<?php 

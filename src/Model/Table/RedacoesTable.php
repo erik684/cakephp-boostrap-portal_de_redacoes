@@ -35,8 +35,9 @@ class RedacoesTable extends Table
         $this->setTable('redacoes');
         $this->setDisplayField('id_redacao');
         $this->setPrimaryKey('id_redacao');
-        $this->addBehavior('Timestamp');
         $this->belongsTo('Usuarios', ['foreignKey' => 'id_usuario']);
+        $this->addBehavior('Timestamp');
+
     }
 
     /**

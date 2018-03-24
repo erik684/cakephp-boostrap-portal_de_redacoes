@@ -55,16 +55,16 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <ul class="navbar-nav mr-auto">
           <?php if($loggedIn) { ?>
           <li class="nav-item active">
-            <a class="nav-link" href="home">Inicio <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="home"><i class="fas fa-home pr-1"></i>Inicio <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="redacoes">Redações</a>
+            <a class="nav-link" href="redacoes"><i class="fas fa-newspaper pr-1"></i>Redações</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Notas</a>
+            <a class="nav-link" href="#"><i class="fas fa-home pr-1"></i>Notas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sobre</a>
+            <a class="nav-link" href="#"><i class="fas fa-exclamation pr-1"></i>Sobre</a>
           </li>
           <?php } ?>
         </ul>
@@ -76,6 +76,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             echo $this->Form->button(__('SAIR'), 
             ['class' => 'btn btn-danger my-2 my-sm-0',
             'controller' => 'usuarios', 'action' => 'sair']);
+            echo $this->Form->end();
           } ?>
 
 

@@ -99,9 +99,21 @@ class UsuariosController extends AppController
 
     }
 
-    public function enviarRedacao()
+    public function redacaoSubmit()
     {
-        
+        $this->loadModel('Redacoes');
+        $redacao = $this->Redacoes->newEntity(['contain' => ['Usuarios']]);
+        $this->set('auth', $this->Auth->User('id_usuario'));
+        $this->set(compact('redacao'));
+        if ($this->request->is('post')) {
+            $redacao = $this->Redacoes->patchEntity($redacao, $this->request->getData());
+            if ($this->Redacoes->save($redacao)) {
+                $this->Flash->success(__('Redação enviada com sucesso!'));
+
+                return $this->redirect(['action' => 'home']);
+            }
+            $this->Flash->error(__('Redação não foi enviada, tente novamente!'));
+        }
     }
 
     /**
